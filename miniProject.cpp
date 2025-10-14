@@ -47,5 +47,17 @@ bool deleteStudent(Student* &head, int studentID)
     }
 
     //if student not found
-    
+    if (current == nullptr){
+        return false;
+    }
+
+    if (prev == nullptr){
+        head = current->next;
+    }
+    else{
+        prev->next = current->next;
+    }
+
+    delete current;
+    return true;
 }
