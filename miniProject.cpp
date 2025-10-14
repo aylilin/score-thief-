@@ -92,3 +92,32 @@ bool updateStudent(Student* head, int studentID, int newUnits, float newGPA)
 
     return true;
 }
+
+void displayAllRecords(Student* head)
+{
+    if (head == nullptr){
+        cout << "The file list is empty!" << endl;
+    }
+
+    Student* current = head;
+    int counter = 1;
+
+    cout << '\t' << "LIST OF ALL STUDENT FILES" <<endl;
+
+    while (current != nullptr){
+        cout << '\t' <<  "File " << counter << " :" << endl;
+        cout << '\t' << "Name : " << current->name << endl;
+        cout << '\t' << "Student ID : " << current->studentID << endl;
+        cout << '\t' << "Units : " << current->units << endl;
+        cout << '\t' << "GPA : " << current->gpa << endl;
+        cout << '\t' << "Security Code : " << current->securityCode << endl;
+        cout << '\t' << "--------------------" <<endl;
+        
+        //move to next file 
+        current = current->next;
+        counter++;
+    }
+
+    cout << "TOTAL NUMBER OF STUDENT : " << (counter - 1) << endl;
+}
+
