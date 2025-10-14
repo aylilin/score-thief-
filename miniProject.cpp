@@ -14,6 +14,18 @@ struct Student{
 
 void addStudent(Student* &head, const string& name, int studentID, int units, float gpa, const string& securityCode)
 {
+    if (name.empty()){
+        throw invalid_argument("name cannot be empty!");
+    }
+
+    if (securityCode.empty()){
+        throw invalid_argument("security code cannot be empty!");
+    }
+
+    if (securityCode.length() != 4){
+        throw invalid_argument("security code must be exactly 4 digits!");
+    }
+    
     Student* newStudent = new Student;
 
     newStudent -> name = name;
@@ -121,3 +133,8 @@ void displayAllRecords(Student* head)
     cout << "TOTAL NUMBER OF STUDENT : " << (counter - 1) << endl;
 }
 
+int main()
+{
+    Student* head = nullptr;
+    int choice = 0;
+}
