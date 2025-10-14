@@ -61,3 +61,20 @@ bool deleteStudent(Student* &head, int studentID)
     delete current;
     return true;
 }
+
+Student* searchStudent(Student* head, int studentID)
+{
+    Student* current = head;
+
+    while (current != nullptr){
+        if (current->studentID == studentID){
+            return current;
+        }
+
+        current = current->next;
+    }
+
+    //if current == nullptr
+    return nullptr;
+}
+
