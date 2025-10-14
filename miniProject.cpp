@@ -78,3 +78,17 @@ Student* searchStudent(Student* head, int studentID)
     return nullptr;
 }
 
+bool updateStudent(Student* head, int studentID, int newUnits, float newGPA)
+{
+    Student* student = searchStudent(head, studentID);
+
+    //if student not found
+    if (student == nullptr){
+        return false;
+    }
+
+    student->units = newUnits;
+    student->gpa = newGPA;
+
+    return true;
+}
